@@ -1,0 +1,18 @@
+@(turmas:List[Turma])
+
+@meuTemplate("Turmas - Todas as turmas"){
+	<table class="table table-bordered">
+  		<tr>
+  			<th>Id</th>
+  			<th>Nome</th>
+  			<th>Periodo</th>
+  		</tr>
+		@for(turma <- turmas) {
+		<tr>
+			<td>@turma.getId()</td>
+			<td>@turma.getNome()</td>
+			<td>@turma.getPeriodo()</td>
+		</tr>
+		}
+	</table>
+}
