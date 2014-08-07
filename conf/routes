@@ -10,4 +10,4 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 GET		/							controllers.Turmas.home()
 GET		/turma/nova					controllers.Turmas.novaTurma()
-GET		/salvarTurma				controllers.Turmas.salvarTurma()				
+POST	/salvarTurma				controllers.Turmas.salvarTurma()				
