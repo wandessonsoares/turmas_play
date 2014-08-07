@@ -1,10 +1,12 @@
 package controllers;
 
+import models.Turma;
+import play.data.Form;
 import play.mvc.Controller;
-import play.mvc.Http.Request;
 import play.mvc.Result;
 
 public class Turmas extends Controller{
+	private static Form<Turma> turmaForm = Form.form(Turma.class);
 
 	public static Result home(){
 		return ok(views.html.home.render());
@@ -15,9 +17,10 @@ public class Turmas extends Controller{
 	}
 	
 	public static Result salvarTurma(){
-		Request request = request();
-		System.out.println(request.body().asFormUrlEncoded().get("nome")[0]);
-		System.out.println(request.body().asFormUrlEncoded().get("periodo")[0]);
+		Form<Turma> formFromRequest = turmaForm.bindFromRequest();
+		Turma turma = formFromRequest.get();
+		System.out.println(turma.getNome());
+		System.out.println(turma.getPeriodo());
 		return TODO;
 	}
 	
