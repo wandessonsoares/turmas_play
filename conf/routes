@@ -9,3 +9,4 @@ GET     /play                           controllers.Application.index()
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 GET		/							controllers.Turmas.home()
+GET		/turma/nova				controllers.Turmas.novaTurma()
