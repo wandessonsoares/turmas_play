@@ -1,5 +1,7 @@
 package controllers;
 
+import com.avaje.ebean.Ebean;
+
 import models.Turma;
 import play.data.Form;
 import play.mvc.Controller;
@@ -19,8 +21,7 @@ public class Turmas extends Controller{
 	public static Result salvarTurma(){
 		Form<Turma> formFromRequest = turmaForm.bindFromRequest();
 		Turma turma = formFromRequest.get();
-		System.out.println(turma.getNome());
-		System.out.println(turma.getPeriodo());
+		Ebean.save(turma);		
 		return TODO;
 	}
 	
