@@ -15,14 +15,14 @@ public class Turmas extends Controller{
 	}
 	
 	public static Result novaTurma(){
-		return ok(views.html.cadastrarTurma.render());
+		return ok(views.html.cadastrarTurma.render(""));
 	}
 	
 	public static Result salvarTurma(){
 		Form<Turma> formFromRequest = turmaForm.bindFromRequest();
 		Turma turma = formFromRequest.get();
 		Ebean.save(turma);		
-		return TODO;
+		return ok(views.html.cadastrarTurma.render("Turma salva com sucesso!"));
 	}
 	
 }
