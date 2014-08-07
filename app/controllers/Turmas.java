@@ -13,7 +13,7 @@ public class Turmas extends Controller{
 		return ok(views.html.cadastrarTurma.render());
 	}
 	
-	public static Result salvarTurma(){
+	public static Result salvarTurma(){ 
 		return TODO;
 	}
 	
